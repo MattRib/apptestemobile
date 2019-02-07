@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Noticia } from '../../model/noticias';
+import { NoticiaService } from '../../services/noticias.service';
 
 
 @IonicPage()
@@ -10,14 +11,25 @@ import { Noticia } from '../../model/noticias';
 })
 export class NoticiasDetalhePage {
 
-  noticia : Noticia;
+  noticias : Noticia[];
 
   constructor(public navCtrl: NavController, 
-              public navParams: NavParams) {
+              public navParams: NavParams,
+              public noticiasService : NoticiaService) {
   }
 
   ionViewDidLoad() {
-    this.noticia = this.navParams.get('noticias');
+    this.noticiasService.getNoticias().subscribe(response => {
+      this.noticias = response;
+    });
+  }
+
+  detalhes(n : Noticia){
+    this.navCtrl.push('NoticiasDetalhePage',{'noticia': n});
+  }
+
+  conteudo(n : Noticia){
+    this.navCtrl.push('NoticiasConteudoPage',{'noticia': n});
   }
 
 }

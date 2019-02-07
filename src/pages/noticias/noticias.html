@@ -16,25 +16,37 @@
 
 </ion-header>
 
- <ion-content>
+<ion-content class="card-background-page">
 
-  <ion-card class="example z-depth-2" *ngFor="let n of noticias">
-    <img src="{{n.img}}">
-    <ion-card-content>
-      <ion-card-title class="text-center">
-        {{n.titulo}}
-      </ion-card-title>
-      <p>{{n.conteudo}}</p>
-      <ion-fab right bottom>
-          <button ion-fab color="light"><ion-icon class="my-3 text-primary"  name="md-share"></ion-icon></button>
-          <ion-fab-list side="top">
-            <button style="background:#3B5998" ion-fab><ion-icon style="color:#fff" name="logo-facebook"></ion-icon></button>
-            <button style="background:#55ACEE" ion-fab><ion-icon style="color:#fff" name="logo-twitter"></ion-icon></button>
-            <button style="background:#3F729B" ion-fab><ion-icon style="color:#fff" name="logo-instagram"></ion-icon></button>
-          </ion-fab-list>
-        </ion-fab>
-      <button (click)="detalhes(n)" ion-button style="width:130px;" class="btn btn-primary btn-lg mb-3 my-3">Ler mais</button>
-    </ion-card-content>
+
+  <ion-card (click)="detalhes(n)">
+    <img src="https://images.pexels.com/photos/18174/reflection-pad-gaming-gamepad.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"/>
+    <div class="card-title">Games</div>
+    <ion-icon class="my-3" name="logo-twitch"></ion-icon>
+  </ion-card>
+
+  <ion-card>
+    <img src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"/>
+    <div class="card-title">Tecnologia</div>
+    <ion-icon class="my-3" ios="ios-laptop" md="md-laptop"></ion-icon>
+  </ion-card>
+
+  <ion-card>
+    <img src="https://images.pexels.com/photos/1024992/pexels-photo-1024992.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"/>
+    <div class="card-title">Viagens</div>
+    <ion-icon class="my-3" ios="ios-plane" md="md-plane"></ion-icon>
+  </ion-card>
+
+  <ion-card>
+    <img src="https://images.pexels.com/photos/163452/basketball-dunk-blue-game-163452.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"/>
+    <div class="card-title">Esportes</div>
+    <ion-icon class="my-3" ios="ios-american-football" md="md-american-football"></ion-icon>
+  </ion-card>
+
+  <ion-card>
+    <img src="https://images.pexels.com/photos/432059/pexels-photo-432059.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"/>
+    <div class="card-title">Moda</div>
+    <ion-icon class="my-3" name="bowtie"></ion-icon>
   </ion-card>
 
 </ion-content>

@@ -1,25 +1,35 @@
+<head>
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.1/css/mdb.min.css" rel="stylesheet">
+</head>
 
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>NoticiaDetalhe</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title class="text-center">Games</ion-title>
+        <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+      </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content style="margin-top: 40px;" >
 
-    <ion-card>
-        <img src="{{noticia?.foto}}"/>
-        <ion-card-content>
-          <ion-card-title>
-            {{noticia?.titulo}}
-            </ion-card-title>
-          <p>
-            {{noticia?.conteudo}}
-          </p>
-        </ion-card-content>
-      </ion-card>
+  <ion-card *ngFor="let n of noticias" (click)="conteudo(n)">
+    <img src="{{n.img}}"/>
+    <ion-card-content>
+      <p class="text-center">{{n.data}}</p>
+      <ion-card-title class="text-center">
+        {{n.titulo}}
+        </ion-card-title>
+      <ion-item class="lead" style="font-size:17px;">
+        {{n.conteudo}}
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>
