@@ -21,15 +21,12 @@ export class NoticiasDetalhePage {
   ionViewDidLoad() {
     this.noticiasService.getNoticias().subscribe(response => {
       this.noticias = response;
+      console.log(response);
     });
   }
-
-  detalhes(n : Noticia){
-    this.navCtrl.push('NoticiasDetalhePage',{'noticia': n});
-  }
-
+  
   conteudo(n : Noticia){
-    this.navCtrl.push('NoticiasConteudoPage',{'noticia': n});
+    this.navCtrl.push('NoticiaConteudoPage',{'noticia': n});
   }
 
 }

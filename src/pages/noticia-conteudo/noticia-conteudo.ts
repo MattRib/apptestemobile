@@ -23,6 +23,7 @@ export class NoticiaConteudoPage {
 
   ionViewDidLoad() {
     this.noticia = this.navParams.get('noticia');
+    console.log(this.noticia);
  }
 
 }
